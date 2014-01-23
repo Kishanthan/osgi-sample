@@ -12,7 +12,7 @@ public class Activator implements BundleActivator {
     @Override
     public void start(BundleContext bundleContext) throws Exception {
         System.out.println("Starting HelloServiceListenerBundle");
-        serviceListener = new HelloServiceListener();
+        serviceListener = new HelloServiceListener(bundleContext);
 
         ServiceReference reference = bundleContext.getServiceReference(Hello.class.getName());
 
